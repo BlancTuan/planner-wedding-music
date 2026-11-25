@@ -1,0 +1,14 @@
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: wedding
+      POSTGRES_PASSWORD: wedding
+      POSTGRES_DB: wedding_music
+    ports:
+      - "127.0.0.1:5433:5432"
+    volumes:
+      - wedding_music_pg:/var/lib/postgresql/data
+
+volumes:
+  wedding_music_pg:

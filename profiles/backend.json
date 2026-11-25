@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "id": "backend",
+  "title": "Backend",
+  "agents": ["planner", "fullstack-dev", "qa-tester", "code-reviewer"],
+  "optionalAgents": [],
+  "hidesGlobalSkills": false,
+  "skills": [
+    {
+      "id": "spec-kit",
+      "required": true,
+      "paths": [
+        ".specify/integration.json",
+        ".specify/init-options.json",
+        ".specify/integrations/cursor-agent.manifest.json",
+        ".cursor/skills/speckit-specify/SKILL.md",
+        ".cursor/skills/speckit-plan/SKILL.md",
+        ".cursor/skills/speckit-tasks/SKILL.md",
+        ".cursor/skills/speckit-implement/SKILL.md"
+      ]
+    },
+    {
+      "id": "api-and-interface-design",
+      "required": true,
+      "paths": [".agents/skills/api-and-interface-design/SKILL.md"]
+    },
+    {
+      "id": "test-driven-development",
+      "required": true,
+      "paths": [".agents/skills/test-driven-development/SKILL.md"]
+    },
+    {
+      "id": "code-review-and-quality",
+      "required": true,
+      "paths": [".agents/skills/code-review-and-quality/SKILL.md"]
+    },
+    {
+      "id": "vercel-react-best-practices",
+      "required": false,
+      "when": "react",
+      "paths": [".agents/skills/vercel-react-best-practices/SKILL.md"]
+    }
+  ]
+}

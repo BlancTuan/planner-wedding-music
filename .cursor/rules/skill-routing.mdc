@@ -1,0 +1,61 @@
+---
+description: "Route tasks to the correct skills without overlap"
+alwaysApply: true
+---
+
+# Skill Routing
+
+## Main workflow
+- Spec Kit is the single source of truth for requirements,
+  architecture, task breakdown and implementation workflow.
+- Never implement a feature before its specification is approved.
+- Use only the skills relevant to the current task.
+- Do not invent business requirements.
+
+## Planning
+Owner: Spec Kit
+- speckit-specify: functional requirements
+- speckit-clarify: unresolved requirements
+- speckit-plan: technical architecture
+- speckit-tasks: task decomposition
+- speckit-implement: implementation workflow
+- Do not use other planning or implementation workflows.
+
+## UI/UX
+Owner: design-taste-frontend
+- Visual design, layout, typography and responsive design.
+- Do not change business logic or API contracts.
+
+## Backend API
+Owner: api-and-interface-design
+- Endpoint details, validation and interface contracts.
+- Follow the approved Spec Kit architecture.
+
+## React Performance
+Owner: vercel-react-best-practices
+- React and Next.js performance only.
+- Activate only if React/Next.js is the chosen stack.
+
+## Testing
+- test-driven-development: unit and integration tests.
+- playwright-cli: functional browser E2E verification.
+- Taste Skill: visual consistency checks.
+
+## Review
+Owner: code-review-and-quality
+- Correctness, maintainability and code quality.
+- Spec Kit checks requirement completeness separately.
+
+## Agent Coordination
+- Main Cursor Agent acts as orchestrator.
+- Delegate independent tasks to specialized subagents.
+- Pass this rule, the specification paths, the acceptance criteria, and the file ownership into every delegated task.
+- Avoid concurrent edits to the same files.
+- Review deliverables before proceeding to the next phase.
+
+## Selected profile
+- Read `.cursor/project-profile.json` for `profile` and `react`.
+- Load the matching file `profiles/<profile>.json`.
+- `scripts/bootstrap.sh --profile` writes that selection.
+- The profile chooses required capabilities for the current project.
+- An installed skill stays available when the selected profile does not require it.
